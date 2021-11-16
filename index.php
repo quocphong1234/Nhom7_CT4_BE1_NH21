@@ -85,7 +85,7 @@ include "header.php";
 								<!-- tab -->
 								<div id="tab1" class="tab-pane active">
 									<div class="products-slick" data-nav="#slick-nav-1">
-                                        <?php foreach($getAllProduct as $value):?>
+                                        <?php foreach($getAllProducts as $value):?>
 										<!-- product -->
 										<div class="product">
 											<div class="product-img">

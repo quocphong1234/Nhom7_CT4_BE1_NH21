@@ -61,6 +61,7 @@
                       <th style="width: 20%" class="text-center">
                       Action
                       </th>
+                      <th style="width: 20%">
                   </tr>
               </thead>
               <tbody>
@@ -72,11 +73,9 @@
                       <td><?php echo $value['id'] ?></td>
                       <td><?php echo $value['name'] ?>
                       </td>
-                      <td><img src="../img/<?php echo $value['image'] ?>" alt="">
+                      <td><img style="width:50px" src="../img/<?php echo $value['image'] ?>" alt="">
                        </td>
-                      <td class="project_progress">
-                      <?php echo number_format($value['price']) ?> VND
-                      </td>
+                      <td class="project_progress"><?php echo number_format($value['price']) ?> VND</td>
                       <td class="project-state">
                          <?php echo $value['manu_name'] ?>
                       </td>
@@ -89,7 +88,8 @@
                               </i>
                               Edit
                           </a>
-                          <a class="btn btn-danger btn-sm" href="#">
+                          <a class="btn btn-danger btn-sm" 
+                          href="del.php?id=<?php echo $value['id'] ?>">
                               <i class="fas fa-trash">
                               </i>
                               Delete

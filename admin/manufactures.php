@@ -41,28 +41,10 @@
               <thead>
                   <tr>
                       <th style="width: 1%">
-                          ID
-                      </th>
-                      <th style="width: 10%">
-                          Name
-                      </th>
-                      <th style="width: 30%">
-                          Image
-                      </th>
-                      <th>
-                          Price
-                      </th>
-                      <th>
-                          description
-                      </th>
-                      <th>
-                          feature
+                          manu_id
                       </th>
                       <th style="width: 8%" class="text-center">
-                          Manufacture
-                      </th>
-                      <th style="width: 8%" class="text-center">
-                          Protype
+                          manu_name
                       </th>
                       <th style="width: 20%" class="text-center">
                       Action
@@ -72,25 +54,13 @@
               </thead>
               <tbody>
                 <?php
-                $getAllProducts = $product->getAllProducts();
-                foreach($getAllProducts as $value):
+                $getAllManus = $manu->getAllManus();
+                foreach($getAllManus as $value): 
                   ?>
                   <tr>
-                      <td><?php echo $value['id'] ?></td>
-                      <td><?php echo $value['name'] ?>
-                      </td>
-                      <td><img style="width:50px" src="../img/<?php echo $value['image'] ?>" alt="">
-                       </td>
-                      <td class="project_progress"><?php echo number_format($value['price']) ?> VND</td>
-                      <td><?php echo $value['description'] ?>
-                      </td>
-                      <td><?php echo $value['feature'] ?>
-                      </td>
+                      <td><?php echo $value['manu_id'] ?></td>
                       <td class="project-state">
                          <?php echo $value['manu_name'] ?>
-                      </td>
-                      <td class="project-state">
-                      <?php echo $value['type_name'] ?>
                       </td>
                       <td class="project-actions text-right">
                           <a class="btn btn-info btn-sm" href="#">
@@ -99,7 +69,7 @@
                               Edit
                           </a>
                           <a class="btn btn-danger btn-sm" 
-                          href="del.php?id=<?php echo $value['id'] ?>">
+                          href="del.php?id=<?php echo $value['manu_id'] ?>">
                               <i class="fas fa-trash">
                               </i>
                               Delete

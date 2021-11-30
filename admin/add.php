@@ -2,6 +2,8 @@
 require "config.php";
 require "models/db.php";
 require "models/product.php";
+require "models/protype.php";
+$type = new Protype;
 $product = new Product;
 if(isset($_POST['submit'])){
     $name = $_POST['name'];
@@ -17,4 +19,10 @@ if(isset($_POST['submit'])){
     $target_file = $target_dir . basename($_FILES["image"]["name"]);
     move_uploaded_file($_FILES["image"]["tmp_name"], $target_file);
 }
-header('location:products.php');
+if(isset($_POST['submit'])){
+    $type_id = $_POST['type_id'];
+    $type_name = $_POST['type_name'];
+    //them sp vao protype
+    $type->addProtype($type_id,$type_name);
+}
+header('location:products.php','location:protypes.php');

@@ -40,7 +40,7 @@
           <table class="table table-striped projects">
               <thead>
                   <tr>
-                      <th style="width: 1%">
+                  <th style="width: 8%" class="text-center">
                           manu_id
                       </th>
                       <th style="width: 8%" class="text-center">
@@ -69,7 +69,7 @@
                               Edit
                           </a>
                           <a class="btn btn-danger btn-sm" 
-                          href="del.php?id=<?php echo $value['manu_id'] ?>">
+                          href="delmanufaceture.php?id=<?php echo $value['manu_name'] ?>">
                               <i class="fas fa-trash">
                               </i>
                               Delete

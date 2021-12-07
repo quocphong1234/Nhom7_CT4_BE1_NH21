@@ -92,14 +92,14 @@
                       <td class="project-state">
                       <?php echo $value['type_name'] ?>
                       </td>
-                      <td class="project-actions text-right">
-                          <a class="btn btn-info btn-sm" href="#">
+                      <td class="project-actions text-right"
+                          href="edit.php?id=<?php echo $value['id'] ?>">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
                           </a>
                           <a class="btn btn-danger btn-sm" 
-                          href="del.php?id=<?php echo $value['id'] ?>">
+                          href="delproduct.php?id=<?php echo $value['id'] ?>">
                               <i class="fas fa-trash">
                               </i>
                               Delete

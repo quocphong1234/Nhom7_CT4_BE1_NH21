@@ -26,4 +26,10 @@ class Product extends Db{
         $sql->bind_param("i", $id);
         return $sql->execute(); //return an object
     }
+    public function editProduct($name,$manu_id,$type_id,$price,$image,$desc)
+    {
+        $sql = self::$connection->prepare("UPDATE products SET `name`, `manu_id`,`type_id`, `price`, `image`, `description` WHERE id=?");
+        $sql->bind_param("siiiss", $name,$manu_id,$type_id,$price,$image,$desc);
+        return $sql->execute(); //return an object
+    }
 }

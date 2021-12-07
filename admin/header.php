@@ -246,6 +246,22 @@ $type = new Protype;
             </a>    
          </li>
          <li class="nav-item menu-open">
+            <a href="addmanufacture.php" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                Add Manufacture
+              </p>
+            </a>    
+         </li>
+         <li class="nav-item menu-open">
+            <a href="editproduct.php" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                Edit Product
+              </p>
+            </a>    
+         </li>
+         <li class="nav-item menu-open">
             <a href="manufactures.php" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
@@ -258,14 +274,6 @@ $type = new Protype;
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Protype
-              </p>
-            </a>    
-         </li>
-         <li class="nav-item menu-open">
-            <a href="products.php" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                Users
               </p>
             </a>    
          </li>

@@ -69,7 +69,7 @@
                               Edit
                           </a>
                           <a class="btn btn-danger btn-sm" 
-                          href="delp.php?type_id=<?php echo $value['type_id'] ?>">
+                          href="delproduct.php?type_id=<?php echo $value['type_id'] ?>">
                               <i class="fas fa-trash">
                               </i>
                               Delete

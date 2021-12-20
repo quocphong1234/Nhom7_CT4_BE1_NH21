@@ -33,10 +33,6 @@
               </div>
             </div>
             <div class="card-body">
-            <div class="form-group">
-                <label for="inputName">type_id</label>
-                <input type="text" id="inputtype_id" class="form-control" name="type_id">
-              </div>
               <div class="form-group">
                 <label for="inputName">type_name</label>
                 <input type="text" id="inputtype_name" class="form-control" name="type_name">

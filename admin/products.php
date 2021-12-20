@@ -7,12 +7,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Projects</h1>
+            <h1>Products</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Projects</li>
+              <li class="breadcrumb-item active">Product</li>
             </ol>
           </div>
         </div>
@@ -25,7 +25,7 @@
       <!-- Default box -->
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">Projects</h3>
+          <h3 class="card-title">Products</h3>
 
           <div class="card-tools">
             <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -43,16 +43,16 @@
                       <th style="width: 1%">
                           ID
                       </th>
-                      <th style="width: 10%">
+                      <th style="width: 12%">
                           Name
                       </th>
-                      <th style="width: 30%">
+                      <th style="width: 10%">
                           Image
                       </th>
                       <th>
                           Price
                       </th>
-                      <th>
+                      <th style="width: 30%">
                           description
                       </th>
                       <th>
@@ -79,6 +79,7 @@
                       <td><?php echo $value['id'] ?></td>
                       <td><?php echo $value['name'] ?>
                       </td>
+                   
                       <td><img style="width:50px" src="../img/<?php echo $value['image'] ?>" alt="">
                        </td>
                       <td class="project_progress"><?php echo number_format($value['price']) ?> VND</td>
@@ -92,9 +93,11 @@
                       <td class="project-state">
                       <?php echo $value['type_name'] ?>
                       </td>
-                      <td class="project-actions text-right"
-                          href="edit.php?id=<?php echo $value['id'] ?>">
+                      <td class="project-actions text-right">
+                    
+                      <a class="btn btn-info btn-sm " href="editproduct.php?id=<?php echo $value['id']?>&manu_id=<?php echo $value['manu_id'] ?>"style="margin-right: 10px;">
                               <i class="fas fa-pencil-alt">
+                         
                               </i>
                               Edit
                           </a>

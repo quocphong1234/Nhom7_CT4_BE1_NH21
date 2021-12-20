@@ -52,9 +52,10 @@ $getAllProducts = $product->getAllProducts();
 			<div id="top-header">
 				<div class="container">
 					<ul class="header-links pull-left">
-						<li><a href="#"><i class="fa fa-phone"></i> +021-95-51-84</a></li>
-						<li><a href="#"><i class="fa fa-envelope-o"></i> email@email.com</a></li>
-						<li><a href="#"><i class="fa fa-map-marker"></i> 1734 Stonecoal Road</a></li>
+						<li><a href="#"><i class="fa fa-phone"></i> +84336526324</a></li>
+						<li><a href="#"><i class="fa fa-envelope-o"></i> lequocphong.tdc2020@gmail.com</a></li>
+						<li><a href="login.php"><i class="fa fa-envelope-o"></i> Login</a></li>
+				
 					</ul>
 					<ul class="header-links pull-right">
 						<li><a href="#"><i class="fa fa-dollar"></i> USD</a></li>
@@ -180,7 +181,7 @@ $getAllProducts = $product->getAllProducts();
 				<div id="responsive-nav">
 					<!-- NAV -->
 					<ul class="main-nav nav navbar-nav">
-						<li class="active"><a href="#">Home</a></li>
+						<li class="active"><a href="index.php">Home</a></li>
 						<?php
 						$getAllManu = $manu->getAllManu();
 						foreach($getAllManu as $value):

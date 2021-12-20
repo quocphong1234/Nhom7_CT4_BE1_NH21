@@ -59,9 +59,8 @@
                   ?>
                   <tr>
                       <td><?php echo $value['manu_id'] ?></td>
-                      <td class="project-state">
-                         <?php echo $value['manu_name'] ?>
-                      </td>
+                       <td><?php echo $value['manu_name'] ?>
+           </td>
                       <td class="project-actions text-right">
                           <a class="btn btn-info btn-sm" href="#">
                               <i class="fas fa-pencil-alt">
@@ -69,7 +68,7 @@
                               Edit
                           </a>
                           <a class="btn btn-danger btn-sm" 
-                          href="delmanufaceture.php?id=<?php echo $value['manu_name'] ?>">
+                          href="delmanufaceture.php?id=<?php echo $value['manu_id'] ?>">
                               <i class="fas fa-trash">
                               </i>
                               Delete

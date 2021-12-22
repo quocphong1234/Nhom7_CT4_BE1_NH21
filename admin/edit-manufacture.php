@@ -12,12 +12,12 @@ if (isset($_GET['manu_id'])) {
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Edit Manufacture</h1>
+                    <h1>Manufacture Edit</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="manufacture.php">Home</a></li>
-                        <li class="breadcrumb-item active">Edit Manufacture</li>
+                        <li class="breadcrumb-item"><a href="product.php">Home</a></li>
+                        <li class="breadcrumb-item active">Manufacture Edit</li>
                     </ol>
                 </div>
             </div>
@@ -58,7 +58,7 @@ if (isset($_GET['manu_id'])) {
             </div>
             <div class="row">
                 <div class="col-12">
-                    
+                  
                     <input type="submit" value="Edit" class="btn btn-success float-right" name="submit">
                 </div>
             </div>

@@ -50,8 +50,6 @@ class Product extends Db
         }
         return $link;
     }
-
-    
     public function delProduct($id)
     {
         $sql = self::$connection->prepare("DELETE FROM `products` WHERE id=?");
@@ -66,17 +64,5 @@ class Product extends Db
         $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
         return $items;
     }
-    public function updateFile($name, $manu_id, $type_id, $price, $image, $desc, $feature, $sale, $id)
-    {
-        $sql = self::$connection->prepare("UPDATE `products` SET `name`= ?,`manu_id`= ?,`type_id`= ?,`price`= ?,`image`= ?,`description`= ?,`feature`= ?,`sale`= ? WHERE `id` = ?");
-        $sql->bind_param("siiissiii", $name, $manu_id, $type_id, $price, $image, $desc, $feature, $sale, $id);
-        return $sql->execute();
-    }
-    public function updateFileNoImage($name, $manu_id, $type_id, $price, $desc, $feature, $sale, $id)
-    {
-        $sql = self::$connection->prepare("UPDATE `products` SET `name`= ?,`manu_id`= ?,`type_id`= ?,`price`= ?,`description`= ?,`feature`= ?,`sale`= ? WHERE `id` = ?");
-        $sql->bind_param("siiisiii", $name, $manu_id, $type_id, $price, $desc, $feature, $sale, $id);
-        return $sql->execute();
-    }
-   
+    
 }

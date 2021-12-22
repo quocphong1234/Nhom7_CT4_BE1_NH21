@@ -77,5 +77,6 @@ class Manufacture extends Db
         $sql->bind_param("si", $manu_name,$manu_id);
         return $sql->execute();
     }
-  
+    
+   
 }

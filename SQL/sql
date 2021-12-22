@@ -1,0 +1,169 @@
+-- phpMyAdmin SQL Dump
+-- version 5.0.2
+-- https://www.phpmyadmin.net/
+--
+-- Máy chủ: 127.0.0.1:3306
+-- Thời gian đã tạo: Th12 22, 2021 lúc 07:23 AM
+-- Phiên bản máy phục vụ: 5.7.31
+-- Phiên bản PHP: 7.3.21
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Cơ sở dữ liệu: `nhom7`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `manufactures`
+--
+
+DROP TABLE IF EXISTS `manufactures`;
+CREATE TABLE IF NOT EXISTS `manufactures` (
+  `manu_id` int(11) NOT NULL AUTO_INCREMENT,
+  `manu_name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`manu_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=38 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `manufactures`
+--
+
+INSERT INTO `manufactures` (`manu_id`, `manu_name`) VALUES
+(1, 'Apple'),
+(2, 'Asus'),
+(3, 'Samsung'),
+(4, 'Oppo'),
+(5, 'Sony'),
+(9, 'Anker');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `products`
+--
+
+DROP TABLE IF EXISTS `products`;
+CREATE TABLE IF NOT EXISTS `products` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `manu_id` int(11) NOT NULL,
+  `type_id` int(11) NOT NULL,
+  `price` int(11) DEFAULT NULL,
+  `image` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci,
+  `feature` tinyint(4) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=104 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `products`
+--
+
+INSERT INTO `products` (`id`, `name`, `manu_id`, `type_id`, `price`, `image`, `description`, `feature`, `created_at`) VALUES
+(1, 'Điện thoại iPhone 12 Pro 128GB', 1, 1, 28490000, 'iphone-12-pro-vang-1-org.jpg', 'iPhone 12 Pro - \"Siêu phẩm công nghệ\" với nhiều nâng cấp mạnh mẽ về thiết kế, cấu hình và hiệu năng, khẳng định đẳng cấp thời thượng trên thị trường smartphone cao cấp.', 1, '2021-10-24 01:00:20'),
+(2, 'Điện thoại iPhone 12 Pro Max 128GB', 1, 1, 32990000, 'iphone-12-pro-max-xanh-duong-1-org.jpg', 'iPhone 12 Pro Max 128 GB một siêu phẩm smartphone đến từ Apple. Máy có một hiệu năng hoàn toàn mạnh mẽ đáp ứng tốt nhiều nhu cầu đến từ người dùng và mang trong mình một thiết kế đầy vuông vức, sang trọng', 0, '2021-10-24 01:00:21'),
+(3, 'Điện thoại iPhone 13 Pro 128GB', 1, 1, 30490000, 'iphone-13-pro-blue-1-1.jpg', 'Mỗi lần ra mắt phiên bản mới là mỗi lần iPhone chiếm sóng trên khắp các mặt trận và lần này cái tên khiến vô số người \"sục sôi\" là iPhone 13 Pro, chiếc điện thoại thông minh vẫn giữ nguyên thiết kế cao cấp, cụm 3 camera được nâng cấp, cấu hình mạnh mẽ cùng thời lượng pin lớn ấn tượng.', 1, '2021-10-24 01:00:22'),
+(4, 'Điện thoại iPhone 12 64GB', 1, 1, 20490000, 'iphone-12-xanh-duong-1-1-org.jpg', 'Apple đã trang bị con chip mới nhất của hãng (tính đến 11/2020) cho iPhone 12 đó là A14 Bionic, được sản xuất trên tiến trình 5 nm với hiệu suất ổn định hơn so với chip A13 được trang bị trên phiên bản tiền nhiệm iPhone 11.', 0, '2021-10-24 01:00:23'),
+(5, 'Điện thoại iPhone 13 Pro Max 128GB', 1, 1, 33990000, 'iphone-13-pro-max-gold-1-1.jpg', 'iPhone 13 Pro Max 128GB - siêu phẩm được mong chờ nhất ở nửa cuối năm 2021 đến từ Apple. Máy có thiết kế không mấy đột phá khi so với người tiền nhiệm, bên trong đây vẫn là một sản phẩm có màn hình siêu đẹp, tần số quét được nâng cấp lên 120 Hz mượt mà, cảm biến camera có kích thước lớn hơn, cùng hiệu năng mạnh mẽ với sức mạnh đến từ Apple A15 Bionic, sẵn sàng cùng bạn chinh phục mọi thử thách.', 1, '2021-10-24 01:00:24'),
+(6, 'Laptop Asus ZenBook UX371EA i7 1165G7/16GB/1TB SSD/Touch/Pen/Cáp/Túi/Office H&S2019/Win10 (HL494TS) ', 2, 2, 41490000, 'asus-zenbook-ux371ea-i7-hl494ts8.jpg', 'Chiêm ngưỡng sự đẳng cấp đến từ Asus ZenBook UX371EA (HL494TS) với xu hướng thiết kế mỏng nhẹ, thời thượng cùng thông số kỹ thuật mạnh mẽ, hứa hẹn sẽ mang đến những trải nghiệm hoàn hảo nhất và không khiến người dùng phải thất vọng.', 1, '2021-10-24 01:00:25'),
+(7, 'Laptop Asus TUF Gaming FX706HE i7 11800H/8GB/512GB/4GB RTX3050Ti/144Hz/Win10 (HX011T) ', 2, 2, 31490000, 'asus-tuf-gaming-fx706he-i7-hx011t-1-org.jpg', 'Sự đẳng cấp của mẫu laptop Asus TUF Gaming FX706HE i7 11800H (HX011T) không chỉ thể hiện qua cấu hình mạnh mẽ từ CPU Intel Core i7 thế hệ 11 mà còn từ ngoại hình ấn tượng mà nó mang lại, bạn có thể thỏa sức sáng tạo đồ họa, chiến game cực đỉnh.', 0, '2021-10-24 01:00:26'),
+(8, 'Laptop Asus TUF Gaming FX516PC i7 11370H/8GB/512GB/4GB RTX3050/144Hz/Win10 (HN001T) ', 2, 2, 28490000, 'asus-tuf-gaming-fx516pc-i7-hn001t-1-org.jpg', 'Asus TUF Gaming FX516PC i7 (HN001T) với thiết kế đầy cá tính, hiệu năng vượt trội khi sở hữu dòng chip Intel thế hệ 11 tiên tiến, cùng card đồ hoạ rời, đây sẽ là người bạn xứng tầm dành cho game thủ để bạn sẵn sàng tác chiến mọi lúc mọi nơi', 1, '2021-10-24 01:00:27'),
+(9, 'Laptop Asus ZenBook UX325EA i5 1135G7/8GB/512GB/OLED/Cáp/Túi/Win10 (KG363T) ', 2, 2, 23790000, 'asus-zenbook-ux325ea-i5-kg363t-1-org.jpg', 'Chắc chắn hơn bao giờ hết nhờ độ bền chuẩn quân đội, laptop Asus Zenbook UX325EA (KG363T) sở hữu kiểu dáng tinh tế cùng hiệu năng tối ưu nhờ CPU Intel thế hệ 11, giúp bạn xử lý nhanh gọn và chính xác mọi tác vụ.', 0, '2021-10-24 01:00:28'),
+(79, 'Apple Watch Series 7 LTE 41mm', 1, 4, 14990000, 'apple-watch-s7-lte-41mm-do-1-2.jpg', 'Apple Watch S7 LTE 41 mm viền nhôm dây cao su có thiết kế được nâng cấp hơn so với phiên bản tiền nhiệm. Sở hữu vẻ ngoài sang trọng và hiện đại, Apple Watch S7 được thiết kế các góc bo tròn mềm mại với mặt đồng hồ được vác cong tạo cảm giác liền mạch hơn với khung viền. Phần khung viền được thiết kế mỏng hơn 40% và làm từ vật liệu nhôm tái chế 100% thân thiện với môi trường. Dây đeo cao su có độ đàn hồi tốt, thoải mái khi đeo và chống thấm mồ hôi hiệu quả.', 1, '2021-11-11 21:28:53'),
+(78, 'Apple Watch Series 7 LTE 45mm ', 1, 4, 15990000, 'apple-watch-series-7-lte-45mm-vien-nhom-xanh-la-1-2.jpg', 'Apple Watch S7 LTE 45 mm dây cao su có thiết kế được nâng cấp hơn so với phiên bản S6. Khung viền bằng nhôm tái chế 100% giúp bảo vệ môi trường, các góc bo tròn mềm mại, viền đồng hồ chỉ mỏng 1.7 mm (mỏng hơn 40% phần viền so với Apple Watch S6). Mặt đồng hồ có kích thước 1.77 inch được vác cong tạo cảm giác liền mạch hơn với khung viền, diện tích màn hình tăng 20% so với phiên bản cũ.', 0, '2021-11-19 01:20:39'),
+(76, 'Apple Watch S6 LTE 44mm viền thép dây cao su', 1, 4, 17841000, '1-org.jpg', 'Apple Watch S6 LTE 44mm viền thép dây cao su xanh dương mang kiểu dáng sang trọng, màu sắc hiện đại, trẻ trung. Nó sở hữu màn hình OLED 1.78 inch cho khả năng hiển thị hình ảnh rực rỡ, sắc nét. Mặt đồng hồ được bảo vệ bởi lớp kính cường lực Sapphire có độ cứng cao, chống trầy xước hiệu quả. Dây đeo silicone có độ đàn hồi tốt, không thấm nước, cho cảm giác êm nhẹ suốt ngày dài.', 1, '2021-11-13 09:00:26'),
+(77, 'Apple Watch S6 LTE 40mm viền thép dây cao su ', 1, 4, 16991000, 'apple-watch-s6-lte-40mm-vien-thep-day-cao-su-xanh-la-1-org.jpg', 'Apple Watch S6 LTE 40mm viền thép dây cao su đen là một trong những dòng đồng hồ được ưa chuộng với thiết kế tinh tinh tế trong từng chi tiết, khung viền được gia công chắc chắn, dây đeo cao su đàn hồi tốt, màn hình sắc nét 1.57 inch hiển thị đủ thông tin. Đây là chiếc đồng hồ hứa hẹn đem đến cho bạn sự hài lòng khi đeo trên tay.', 1, '2021-11-16 12:08:56'),
+(75, 'Apple Watch S6 LTE 40mm viền thép dây thép ', 1, 4, 17841000, 'apple-watch-s6-lte-40mm-vien-thep-day-thep-221020-1158380.jpg', 'Mang nét hiện đại cùng thiết kế sang trọng, trẻ trung Apple Watch S6 LTE 40mm viền thép dây thép sở hữu các chi tiết được thiết kế tinh xảo, dây đeo thép bền bỉ dưới hình dáng lưới đan mỏng. Màn hình 1.57 inch hiển thị hình ảnh sắc nét, mặt kính Sapphire giúp bảo vệ chiếc đồng hồ của bạn an toàn trước những va đập không mong muốn.', 0, '2021-11-15 01:00:51'),
+(74, 'Apple Watch S6 LTE 44mm viền thép dây thép', 1, 4, 18691000, 'apple-watch-s6-lte-44mm-vien-thep-day-thep-221020-1217560.jpg', 'Thiết kế mang tính biểu tượng của Apple với nút Digital Crown đặc trưng Chiếc Apple Watch S6 LTE sở hữu dây đeo sáng bóng, chống gỉ sét tốt, màn hình tràn viền mang lại sự trải nghiệm sắc nét, rõ ràng. Phần thân máy có kết cấu chắc chắn, kính cường lực chống trầy xước tốt, không ngại những va chạm thông thường. Mặt đồng hồ với kích thước 1.78 inch giúp hiển thị thông tin rõ ràng hơn, đem lại cho bạn sự hài lòng khi đeo mẫu đồng hồ phiên bản 2020 này trên tay.', 1, '2021-11-14 11:00:57'),
+(73, 'Apple Watch Series 7 LTE 41mm viền thép', 1, 4, 20990000, 'apple-watch-s7-lte-41mm-vien-thep-tim-1.jpg', 'Kiểu dáng năng động, trẻ trung Apple Watch S7 LTE 41 mm viền thép có thiết kế tươi trẻ, hiện đại. Khung viền thép bền bỉ, cứng cáp cùng mặt kính Sapphire giúp bảo vệ an toàn cho đồng hồ trước những va đập không mong muốn. Màn hình OLED 1.61 inch hiển thị hình ảnh sống động, sắc nét, dây đeo silicone êm nhẹ, không thấm nước, cho bạn cảm giác dễ chịu suốt ngày dài.', 0, '2021-11-13 23:00:07'),
+(72, 'Apple Watch Series 7 LTE 41mm dây thép ', 1, 4, 20990000, 'apple-watch-series-7-lte-41mm-day-thep-vang-1.jpg', 'Apple Watch S7 LTE 41 mm được trang bị khung viền thép không gỉ cứng cáp, trang nhã cùng phần thiết kế bo cong mềm mại quen thuộc của nhà Apple, bên cạnh đó bề mặt đồng hồ có kích thước 1.61 inch (diện tích màn hình tăng 20% so với phiên bản cũ) được bảo vệ bởi lớp kính Sapphire cao cấp. Phần viền của đồng hồ được làm trau chuốt hơn với độ dày chỉ 1.7 mm, tạo cảm giác tràn viền nhiều hơn (phần viền mỏng hơn 60% so với Apple Watch S6).', 1, '2021-11-13 00:00:26'),
+(71, 'Apple Watch Series 7 LTE 45mm viền thép ', 1, 4, 21990000, 'apple-watch-s7-lte-45mm-vien-thep-tim-1.jpg', 'Apple Watch Series 7 LTE 45mm viền thép là một phiên bản nâng cấp nhè nhẹ so với S6, sở hữu đường nét thiết kế có phần tinh tế hơn và màn hình lớn hơn để thao tác vuốt chạm dễ dàng. Dây đeo chất liệu silicone êm ái, co giãn tốt, chống thấm mồ hôi mang lại cảm giác thoải mái cho người dùng. ', 1, '2021-11-11 05:00:20'),
+(70, 'Apple Watch Series 7 LTE 45mm dây thép', 1, 4, 22990000, 'apple-watch-series-7-lte-45mm-day-thep-bac-1.jpg ', 'Apple Watch S7 LTE 45 mm sở hữu khung viền thép không gỉ cứng cáp, sang trọng cùng thiết kế bo cong mềm mại ở phần góc và mặt kính Sapphire có kích thước 1.77 inch (diện tích màn hình tăng 20% so với phiên bản cũ), bảo vệ tốt mặt kính trước những va đập. Phần viền đồng hồ được được làm mỏng nhẹ chỉ 1.7 mm, tạo cảm giác tràn viền nhiều hơn (phần viền mỏng hơn 60% so với Apple Watch S6)', 0, '2021-11-11 20:00:50'),
+(69, 'Apple Watch S6 40mm viền nhôm dây cao su', 1, 4, 10191000, 'apple-watch-s6-40mm-vien-nhom-day-cao-su-xanh-cont-1-org.jpg', 'Apple Watch S6 mang đến những nâng cấp hữu ích để hỗ trợ người dùng một cách tối ưu nhất. Nổi bật trong số đó là chApple Watch S7 LTE 45 mm sở hữu khung viền thép không gỉ cứng cáp, sang trọng cùng thiết kế bo cong mềm mại ở phần góc và mặt kính Sapphire có kích thước 1.77 inch (diện tích màn hình tăng 20% so với phiên bản cũ), bảo vệ tốt mặt kính trước những va đập. Phần viền đồng hồ được được làm mỏng nhẹ chỉ 1.7 mm, tạo cảm giác tràn viền nhiều hơn (phần viền mỏng hơn 60% so với Apple Watch S6)', 0, '2021-11-13 03:00:26'),
+(68, 'Apple Watch SE 40mm viền nhôm dây cao su ', 1, 4, 8450000, 'untitled-1-org.jpg', 'Thiết kế sang trọng, hiện đại, mang nét đặc trưng của Apple Apple Watch SE 40mm viền nhôm dây cao su hồng có khung viền chắc chắn, thiết kế bo tròn 4 góc giúp thao tác vuốt chạm thoải mái hơn. Mặt kính cường lực Ion-X strengthened glass với kích thước 1.57 inch, hiển thị rõ ràng. Khung viền nhôm chắc chắn cùng dây đeo cao su có độ đàn hồi cao, êm ái, tạo cảm giác thoải mái khi đeo.', 1, '2021-11-15 03:00:40'),
+(67, 'Điện thoại iPhone XR 64GB', 1, 1, 13490000, 'iphone-xr-xanh-1-1-org.jpg', 'Là chiếc điện thoại iPhone có mức giá dễ chịu, phù hợp với nhiều khách hàng hơn, iPhone Xr vẫn được ưu ái trang bị chip Apple A12 mạnh mẽ, màn hình tai thỏ cùng khả năng kháng nước kháng bụi', 1, '2021-11-15 01:00:30'),
+(65, 'Điện thoại iPhone 12 mini 64GB', 1, 1, 18990000, 'iphone-12-mini-1-1-org.jpg', 'Điểm nhấn đầu tiên phải kể đến ở dòng máy này chính là viền máy không còn được thiết kế bo cong các cạnh, mà thay vào đó là phần cạnh máy được vát phẳng vô cùng mạnh mẽ và cá tính.', 1, '2021-11-15 01:00:28'),
+(66, 'Điện thoại iPhone 11 64GB', 1, 1, 17990000, 'iphone-11-trang-1-2-org.jpg', 'Tháng 09/2019, Apple đã chính thức trình làng bộ 3 siêu phẩm iPhone 11, trong đó phiên bản iPhone 11 64GB có mức giá rẻ nhất nhưng vẫn được nâng cấp mạnh mẽ như iPhone Xr ra mắt trước đó. ', 0, '2021-11-15 01:00:29'),
+(63, 'Điện thoại iPhone 13 128GB', 1, 1, 25490000, 'iphone-13-xanh-1.jpg', 'Con chip Apple A15 Bionic siêu mạnh được sản xuất trên quy trình 5 nm giúp iPhone 13 đạt hiệu năng ấn tượng, với CPU nhanh hơn 50%, GPU nhanh hơn 30% so với các đối thủ trong cùng phân khúc', 0, '2021-11-15 01:00:26'),
+(64, 'Điện thoại iPhone 13 mini 128GB', 1, 1, 21990000, 'iphone-13-mini-black-1.jpg', 'iPhone 13 mini được trang bị bộ vi xử lý A15 Bionic sản xuất trên tiến trình 5 nm giúp cải thiện hiệu suất và giảm điện năng tiêu thụ đến 15% so với phiên bản A14 Bionic trước đó, đáp ứng hoàn hảo trong công việc cũng như trong giải trí của người dùng tốt hơn.', 1, '2021-11-15 01:00:27'),
+(25, 'Laptop Asus ZenBook UX482EA i5', 2, 2, 32490000, 'asus-zenbook-ux482ea-i5-ka081t-1-1-org.jpg', 'Nếu bạn đang muốn tìm kiếm cho mình một chiếc laptop cao cấp, sang trọng, mang cấu hình mạnh mẽ từ chip Intel thế hệ 11 hiệu năng đồ hoạ cao', 0, '2021-10-24 01:00:45'),
+(61, 'Laptop Asus ExpertBook B9400CEA i7 1165G7/16GB/1TB SSD/Cáp/Túi/Win10 (KC0790T)', 2, 2, 36490000, 'asus-expertbook-b9400cea-i7-kc0790t-1-1.jpg', 'Sự kết hợp tuyệt hảo giữa trọng lượng gọn nhẹ và sức mạnh vượt trội, Asus ExpertBook B9400CEA i7 1165G7 (KC0790T) đại diện cho thế hệ laptop tân tiến, dẫn đầu xu hướng, di động, mạnh mẽ và đáng tin cậy hơn bao giờ hết.', 0, '2021-10-24 01:00:46'),
+(11, 'Máy tính bảng Samsung Galaxy Tab S7', 3, 3, 899000, 'samsung-galaxy-tab-s7-xanh-duong-1-org.jpg', 'Samsung Galaxy Tab S7 chiếc máy tính bảng có thiết kế tuyệt đẹp, màn hình 120 Hz siêu mượt, camera kép ấn tượng, bút S Pen cùng một hiệu năng mạnh mẽ thuộc top đầu thị trường máy tính bảng Android.', 0, '2021-10-24 01:00:30'),
+(12, 'Máy tính bảng Samsung Galaxy Tab A7 (2020)', 3, 3, 7390000, 'samsung-galaxy-tab-a7-2020-1-org.jpg', 'Samsung Galaxy Tab A7 (2020) là một chiếc máy tính bảng có thiết kế đẹp, cấu hình khá, nhiều tính năng tiện ích, một công cụ đắc lực hỗ trợ bạn trong công việc cũng như trong học tập hay giải trí.', 1, '2021-10-24 01:00:31'),
+(13, 'Máy tính bảng Samsung Galaxy Tab S6 Lite', 3, 3, 9090000, 'samsung-galaxy-tab-s6-lite-1-org.jpg', 'Sau thành công của Galaxy Tab S6, Samsung tiếp tục chinh phục người dùng với Galaxy Tab S6 Lite có phân khúc giá rẻ hơn. Thiết bị vẫn hỗ trợ bút S Pen thần thánh, thiết kế kim loại cao cấp và màn hình, âm thanh giải trí đỉnh cao.', 0, '2021-10-24 01:00:32'),
+(14, 'Máy tính bảng Samsung Galaxy Tab A7 Lite', 3, 3, 4140000, 'samsung-galaxy-tab-a7-lite-1-3-org.jpg', 'Galaxy Tab A7 Lite là phiên bản rút gọn của dòng máy tính bảng \"ăn khách\" Galaxy Tab A7 thuộc thương hiệu Samsung, đáp ứng nhu cầu giải trí của khách hàng thuộc phân khúc bình dân với màn hình lớn nhưng vẫn gọn nhẹ hợp túi tiền.', 1, '2021-10-24 01:00:33'),
+(15, 'Oppo Watch 46mm dây silicone đen', 4, 4, 5752000, 'oppo-watch-46mm-day-silicone-1-1-org.jpg', 'Đồng hồ thông minh Oppo Watch màu đen phiên bản 46mm sử dụng mặt đồng hồ vuông, bo cong nhẹ ở 4 cạnh, cùng với mặt kính bo cong 2D sang hai bên có chiều sâu tạo cảm giác như mặt kính cong 3D, màn hình AMOLED 1.91 inch độ phân giải 402 x 476 pixels, mật độ điểm ảnh 326 ppi và dải màu rộng chuẩn DCI-P3 cho chất lượng hiển thị sắc nét, sống động. Dây đeo silicone cho cảm giác mang được dễ chịu và thoải mái.', 0, '2021-10-24 01:00:34'),
+(16, 'Oppo Watch 41mm dây silicone hồng', 4, 4, 4312000, 'oppo-watch-41mm-day-silicone-hong-1-org.jpg', 'Đồng hồ thông minh Oppo Watch màu hồng phiên bản 41mm trang bị màn hình AMOLED 1.6 inch cùng độ phân giải là 320 x 360 pixels, mật độ điểm ảnh 326ppi cho chất lượng hiển thị cực kì sắc nét. Dây đeo làm từ silicone với thiết kế mang lại cảm giác vô cùng mềm mại, không bị đau khi đeo lâu.', 1, '2021-10-24 01:00:35'),
+(17, 'Oppo Watch 46mm dây silicone vàng đồng', 4, 4, 5752000, 'oppo-watch-46mm-day-silicone-hong-1-org.jpg', 'Đồng hồ thông minh Oppo Watch màu vàng hồng phiên bản 46mm sử dụng mặt đồng hồ vuông, bo cong nhẹ ở 4 cạnh, cùng với mặt kính vát cong 2D có chiều sâu tạo cảm giác như mặt kính cong 3D, màn hình AMOLED 1.91 inch độ phân giải 402 x 476 pixels cho chất lượng hiển thị sắc nét. Dây đeo silicone cho cảm giác mang được dễ chịu và thoải mái.', 0, '2021-10-24 01:00:36'),
+(18, 'Oppo Watch 41mm dây silicone đen', 4, 4, 4312000, 'oppo-watch-41mm-day-silicone-den-1-org.jpg', 'Đồng hồ thông minh Oppo Watch màu đen phiên bản 41mm sử dụng mặt đồng hồ dạng hình vuông với 4 góc bo tròn nhẹ, màn hình AMOLED 1.6 inch (320 x 360 pixels) cùng mật độ điểm ảnh 326ppi cho chất lượng hiển thị cực kì rõ nét. Dây đeo silicone tạo cảm giác vô cùng mềm mại, không bị đau khi đeo lâu.', 1, '2021-10-24 01:00:37'),
+(19, 'Vòng đeo tay thông minh Oppo Band', 4, 4, 711000, 'oppo-band-1-org.jpg', 'Vòng đeo tay thông minh Oppo Band mang đến một diện mạo mới - đầy cá tính và năng động. Dây đeo silicone nhẹ nhàng, không thấm nước, cho bạn thỏa sức hoạt động suốt cả ngày mà không lo tù bí, nặng tay. Màn hình AMOLED 1.1 inch vừa phải, tạo cảm giác thanh lịch khi đeo trên tay nhưng cũng vừa đủ để bạn quan sát thông tin hiển thị một cách dễ dàng.', 0, '2021-10-24 01:00:38'),
+(20, 'Loa Bluetooth Sony SRS-XB13', 5, 5, 1290000, 'bluetooth-sony-srs-xb13-2.2-1-org.jpg', 'Kiểu dáng di động, 2 tông màu đen - xanh dương cá tính Thiết kế loa Bluetooth Sony đơn giản, gọn nhẹ chỉ 0.4 kg, đi kèm dây treo cho bạn dễ dàng đeo vào cổ tay của mình hoặc treo móc vào balo mang theo khi đi chơi, du lịch, đi học,... Chất liệu vỏ nhựa có thêm lớp UV coating cho độ bền cao, chống trầy xước, làm sạch nhẹ nhàng. ', 1, '2021-10-24 01:00:39'),
+(21, 'Loa Bluetooth Sony Extra Bass SRS-XB23', 5, 5, 2365000, 'loa-bluetooth-sony-extra-bass-srs-xb23-xanhduong-1-org.jpg', 'Loa Sony kiểu dáng tinh tế, năng động, dễ mang theo Hình trụ tròn tinh xảo, loa có kích thước dễ cầm nắm, di chuyển. Sở hữu các màu sắc sang trọng là xanh dương, đen, xanh rêu giúp tôn vinh nét đẹp của mọi không gian sử dụng, cho người dùng thêm cá tính, sành điệu.', 0, '2021-10-24 01:00:40'),
+(22, 'Loa Bluetooth Sony Extra Bass SRS-XB33', 5, 5, 3505000, 'loa-bluetooth-sony-srs-xb33-den-1-org.jpg', 'Loa Bluetooth kiểu dáng năng động, nhiều màu sắc lựa chọn Thiết kế cầm vừa tay, có thể trực tiếp cầm loa nghe nhạc hoặc cho vào túi xách, balo khi đi chơi, du lịch, đi làm,... Với 3 gam màu nổi bật là đen, đỏ và xanh dương, bạn nam và nữ có thể tiện chọn mua theo sở thích của mình.', 1, '2021-10-24 01:00:41'),
+(80, 'Pin sạc dự phòng Polymer 20000mAh Type C PD 20W PowerCore Essential Anker A1287 ', 9, 6, 1330000, 'pin-polymer-20000mah-type-c-pd-20w-anker-a1287-2.jpg', 'Power Delivery được tích hợp trên cổng Type-C có khả năng tinh chỉnh dòng sạc phù hợp với từng thiết bị, giúp bổ sung năng lượng nhanh chóng, khi sạc cho iPhone 12 đầy 50% chỉ trong 30 phút.', 0, '2021-10-18 01:40:52'),
+(81, 'Pin sạc dự phòng Polymer 10000mAh Type C PD 20W Anker PowerCore Slim A1244', 9, 6, 950000, 'pin-polymer-10000mah-type-c-pd-20w-anker-a1244-2.jpg', 'Với kiểu dáng mỏng nhẹ, trọng lượng 212 g chỉ nặng hơn một chút so với quả bóng chày khiến bạn luôn thoải dù mái mang theo bất cứ nơi đâu. 4 góc đường cong cũng được làm tỉ mỉ, tinh tế tạo nên tổng thể chiếc pin sạc dự phòng vô cùng đẹp mắt, sang trọng.Bề mặt trên được phủ lớp vải Fabric chống trầy xước khi áp điện thoại và Pin sạc dự phòng Polymer 10.000 mAh Type C PD 20W Anker PowerCore Slim A1244 vào nhau phù hợp cho các bạn công việc linh hoạt, cần di chuyển và sạc pin điện thoại thường xuyên.', 1, '2021-12-26 01:09:56'),
+(82, 'Adapter Sạc Type C PD 30W Anker PowerPort Atom A2017 Trắng ', 9, 6, 800000, 'adapter-type-c-pd-30w-anker-powerport-atom-a2017-9.jpg', 'Nhỏ gọn, tinh tế, tối giản kho phụ kiện của bạn Adapter Sạc Anker PowerPort Atom A2017 Trắng được hoàn thiện từ chất liệu bán dẫn GaN (Gallium Nitride) giúp thu gọn kích thước tối đa, nhỏ nhắn hơn nhưng vẫn đảm bảo hiệu suất cao.', 1, '2021-10-24 11:10:45');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `protypes`
+--
+
+DROP TABLE IF EXISTS `protypes`;
+CREATE TABLE IF NOT EXISTS `protypes` (
+  `type_id` int(11) NOT NULL AUTO_INCREMENT,
+  `type_name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`type_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=38 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `protypes`
+--
+
+INSERT INTO `protypes` (`type_id`, `type_name`) VALUES
+(1, 'Điện thoại'),
+(2, 'Laptop'),
+(3, 'Tablet'),
+(4, 'Đồng hồ thông minh'),
+(6, 'Phụ Kiện'),
+(5, 'Loa bluetooth');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE IF NOT EXISTS `users` (
+  `user_id` int(11) NOT NULL,
+  `username` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`user_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `users`
+--
+
+INSERT INTO `users` (`user_id`, `username`, `password`) VALUES
+(1, 'phong', '202cb962ac59075b964b07152d234b70'),
+(2, 'trieu', '250cf8b51c773f3f8dc8b4be867a9a02'),
+(3, 'admin', 'fa745da04c6a1d87f49d44319426e8ae');
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

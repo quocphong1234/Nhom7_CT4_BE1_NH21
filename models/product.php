@@ -61,4 +61,12 @@ class Product extends Db
         $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
         return $items; //return an array
     }
+    public function getNewProducts()
+    {
+        $sql = self::$connection->prepare("SELECT * FROM `products`, `protypes` WHERE `products`.type_id = `protypes`.type_id and products.quantity >= 1  AND (DATEDIFF(CURDATE(), products.created_at) < 30) ORDER BY products.`created_at` DESC ");
+        $sql->execute();
+        $items = array();
+        $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
+        return $items;
+    }
 }

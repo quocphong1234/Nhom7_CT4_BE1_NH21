@@ -38,8 +38,8 @@
 									<input type="checkbox" id="category-1">
 									<label for="category-1">
 										<span></span>
-										Laptops
-										<small>(120)</small>
+										Dien Thoai
+										
 									</label>
 								</div>
 
@@ -47,8 +47,8 @@
 									<input type="checkbox" id="category-2">
 									<label for="category-2">
 										<span></span>
-										Smartphones
-										<small>(740)</small>
+										Tablet
+										
 									</label>
 								</div>
 
@@ -56,8 +56,8 @@
 									<input type="checkbox" id="category-3">
 									<label for="category-3">
 										<span></span>
-										Cameras
-										<small>(1450)</small>
+										Laptop
+										
 									</label>
 								</div>
 
@@ -65,8 +65,8 @@
 									<input type="checkbox" id="category-4">
 									<label for="category-4">
 										<span></span>
-										Accessories
-										<small>(578)</small>
+										Đồng hồ thông mình
+										
 									</label>
 								</div>
 
@@ -74,8 +74,8 @@
 									<input type="checkbox" id="category-5">
 									<label for="category-5">
 										<span></span>
-										Laptops
-										<small>(120)</small>
+									 Phụ kiện
+										
 									</label>
 								</div>
 
@@ -83,8 +83,8 @@
 									<input type="checkbox" id="category-6">
 									<label for="category-6">
 										<span></span>
-										Smartphones
-										<small>(740)</small>
+										Loa bluetooth
+									
 									</label>
 								</div>
 							</div>
@@ -119,90 +119,57 @@
 									<input type="checkbox" id="brand-1">
 									<label for="brand-1">
 										<span></span>
-										SAMSUNG
-										<small>(578)</small>
+									Apple
+										
 									</label>
 								</div>
 								<div class="input-checkbox">
 									<input type="checkbox" id="brand-2">
 									<label for="brand-2">
 										<span></span>
-										LG
-										<small>(125)</small>
+										Samsung
+										
 									</label>
 								</div>
 								<div class="input-checkbox">
 									<input type="checkbox" id="brand-3">
 									<label for="brand-3">
 										<span></span>
-										SONY
-										<small>(755)</small>
+										Asus
+										
 									</label>
 								</div>
 								<div class="input-checkbox">
 									<input type="checkbox" id="brand-4">
 									<label for="brand-4">
 										<span></span>
-										SAMSUNG
-										<small>(578)</small>
+										Anker
+									
 									</label>
 								</div>
 								<div class="input-checkbox">
 									<input type="checkbox" id="brand-5">
 									<label for="brand-5">
 										<span></span>
-										LG
-										<small>(125)</small>
+									Oppo
+										
 									</label>
 								</div>
 								<div class="input-checkbox">
 									<input type="checkbox" id="brand-6">
 									<label for="brand-6">
 										<span></span>
-										SONY
-										<small>(755)</small>
+										Sony
+										
 									</label>
+									
 								</div>
 							</div>
 						</div>
 						<!-- /aside Widget -->
 
 						<!-- aside Widget -->
-						<div class="aside">
-							<h3 class="aside-title">Top selling</h3>
-							<div class="product-widget">
-								<div class="product-img">
-									<img src="./img/product01.png" alt="">
-								</div>
-								<div class="product-body">
-									<p class="product-category">Category</p>
-									<h3 class="product-name"><a href="#">product name goes here</a></h3>
-									<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-								</div>
-							</div>
-
-							<div class="product-widget">
-								<div class="product-img">
-									<img src="./img/product02.png" alt="">
-								</div>
-								<div class="product-body">
-									<p class="product-category">Category</p>
-									<h3 class="product-name"><a href="#">product name goes here</a></h3>
-									<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-								</div>
-							</div>
-
-							<div class="product-widget">
-								<div class="product-img">
-									<img src="./img/product03.png" alt="">
-								</div>
-								<div class="product-body">
-									<p class="product-category">Category</p>
-									<h3 class="product-name"><a href="#">product name goes here</a></h3>
-									<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-								</div>
-							</div>
-						</div>
+						
 						<!-- /aside Widget -->
 					</div>
 					<!-- /ASIDE -->
@@ -245,7 +212,7 @@
                             foreach($search as $value):
                             ?>
 							<!-- product -->
-							<div class="col-md-4 col-xs-6">
+							<div class="col-md-4 col-xs-12">
 								<div class="product">
 									<div class="product-img">
 										<img src="./img/<?php echo $value ['image'] ?>" alt="">
@@ -262,8 +229,7 @@
 											<i class="fa fa-star"></i>
 										</div>
 										<div class="product-btns">
-											<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span classs="tooltipp">add to wishlist</span></button>
-											<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
+											
 											<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
 										</div>
 									</div>

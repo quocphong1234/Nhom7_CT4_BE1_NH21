@@ -1,4 +1,3 @@
-
 <?php
 require "config.php";
 require "models/db.php";

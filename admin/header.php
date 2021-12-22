@@ -4,9 +4,11 @@ require "models/db.php";
 require "models/product.php";
 require "models/manufacture.php";
 require "models/protype.php";
+require "models/user.php";
 $product = new Product;
 $manu = new Manufacture;
 $type = new Protype;
+$user = new User;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -253,14 +255,7 @@ $type = new Protype;
               </p>
             </a>    
          </li>
-         <li class="nav-item menu-open">
-            <a href="editproduct.php" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                Edit Product
-              </p>
-            </a>    
-         </li>
+        
          <li class="nav-item menu-open">
             <a href="manufactures.php" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -277,6 +272,7 @@ $type = new Protype;
               </p>
             </a>    
          </li>
+         
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

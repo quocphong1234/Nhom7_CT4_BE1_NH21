@@ -208,9 +208,7 @@ include "header.php";
 												<h3 class="product-name"><a href="#"><?php echo $value['name'] ?></a></h3>
 												<h4 class="product-price">22,043,000<del class="product-old-price">31,490,000</del>VND</h4>
 												<div class="product-rating">
-									
-											
-													<i class="fa fa-star"></i>
+										  		    <i class="fa fa-star"></i>
 													<i class="fa fa-star"></i>
 													<i class="fa fa-star"></i>
 													<i class="fa fa-star"></i>

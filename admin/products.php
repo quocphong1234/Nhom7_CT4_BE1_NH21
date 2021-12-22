@@ -40,23 +40,26 @@
           <table class="table table-striped projects">
               <thead>
                   <tr>
-                      <th style="width: 1%">
+                      <th>
                           ID
                       </th>
-                      <th style="width: 12%">
+                      <th style="width: 8%">
                           Name
                       </th>
-                      <th style="width: 10%">
+                      <th style="width: 5%">
                           Image
                       </th>
                       <th>
                           Price
                       </th>
-                      <th style="width: 30%">
+                      <th style="width: 50%" class="text-center">
                           description
                       </th>
                       <th>
                           feature
+                      </th>
+                      <th style="width: 20%">
+                          Created_at
                       </th>
                       <th style="width: 8%" class="text-center">
                           Manufacture
@@ -64,7 +67,7 @@
                       <th style="width: 8%" class="text-center">
                           Protype
                       </th>
-                      <th style="width: 20%" class="text-center">
+                      <th> 
                       Action
                       </th>
                       <th style="width: 20%">
@@ -87,6 +90,8 @@
                       </td>
                       <td><?php echo $value['feature'] ?>
                       </td>
+                      <td><?php echo $value['created_at'] ?>
+                      </td>
                       <td class="project-state">
                          <?php echo $value['manu_name'] ?>
                       </td>
@@ -94,13 +99,11 @@
                       <?php echo $value['type_name'] ?>
                       </td>
                       <td class="project-actions text-right">
-                    
-                      <a class="btn btn-info btn-sm " href="editproduct.php?id=<?php echo $value['id']?>&manu_id=<?php echo $value['manu_id'] ?>"style="margin-right: 10px;">
-                              <i class="fas fa-pencil-alt">
-                         
-                              </i>
-                              Edit
-                          </a>
+                  <a class="btn btn-info btn-sm" href="edit-product.php?id=<?php echo $value['id'] ?>">
+                    <i class="fas fa-pencil-alt">
+                    </i>
+                    Edit
+                  </a>
                           <a class="btn btn-danger btn-sm" 
                           href="delproduct.php?id=<?php echo $value['id'] ?>">
                               <i class="fas fa-trash">

@@ -54,12 +54,12 @@ $getAllProducts = $product->getAllProducts();
 					<ul class="header-links pull-left">
 						<li><a href="#"><i class="fa fa-phone"></i> +84336526324</a></li>
 						<li><a href="#"><i class="fa fa-envelope-o"></i> lequocphong.tdc2020@gmail.com</a></li>
-						<li><a href="login.php"><i class="fa fa-envelope-o"></i> Login</a></li>
+					
 				
 					</ul>
 					<ul class="header-links pull-right">
-						<li><a href="#"><i class="fa fa-dollar"></i> USD</a></li>
-						<li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
+				
+						<li><a href="login.php"><i class="fa fa-user-o"></i> Login</a></li>
 					</ul>
 				</div>
 			</div>

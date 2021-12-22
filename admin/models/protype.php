@@ -1,5 +1,6 @@
 <?php
-class Protype extends Db{
+class Protype extends Db
+{
     public function getAllProtypes()
     {
         $sql = self::$connection->prepare("SELECT * FROM protypes");
@@ -7,6 +8,14 @@ class Protype extends Db{
         $items = array();
         $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
         return $items;
+    }
+    public function getAllProtype()
+    {
+        $sql = self::$connection->prepare("SELECT * FROM protypes");
+        $sql->execute(); //return an object
+        $items = array();
+        $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
+        return $items; //return an array   
     }
     public function addProtype($type_name)
     {
@@ -23,14 +32,19 @@ class Protype extends Db{
         $sql->bind_param("i", $type_id);
         return $sql->execute(); //return an object
     }
-    public function getTypeByID($type_id)
+    public function selectNameType($type_id)
     {
-        $sql = self::$connection->prepare("SELECT * FROM manufactures 
-        WHERE `type_id` = ?");
-        $sql->bind_param("i", $type_id);
+        $sql = self::$connection->prepare("SELECT * FROM `protypes` WHERE `type_id`=?");
+        $sql->bind_param("i",$type_id);
         $sql->execute(); //return an object
-        $items = array();
         $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
-        return $items; //return an array
+        return $items;
     }
+    public function updateFilepro($type_id,$type_name)
+    {
+        $sql = self::$connection->prepare("UPDATE `protypes` SET `type_name`=? WHERE `type_id` = ?");
+        $sql->bind_param("si", $type_name,$type_id);
+        return $sql->execute();
+    }
+   
 }
